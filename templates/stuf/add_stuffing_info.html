@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Stuffing Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Stuffing</li>
+          <li class="breadcrumb-item active">Add Stuffing Infos</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Add Stuffing Information to {{ stuffing.stuffing_number }}</h5>
+
+              <!-- General Form Elements -->
+               <form action="/stuffing/add-info/{{ stuffing.id }}" method="POST" enctype="multipart/form-data">
+
+                        <div class="row mb-3">
+                            <label for="supplier_name" class="col-sm-2 col-form-label">Supplier Name (Nom du Fournisseur) :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="fc" id="supplier_name" name="supplier_name" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="wh_code" class="col-sm-2 col-form-label">Warehouse Code (Code de l'Entrepôt) :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="fc" id="wh_code" name="wh_code" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="bag_type" class="col-sm-2 col-form-label">Bag Type:</label>
+                            <div class="col-sm-10">
+                                <select class="form-select" id="bag_type" name="bag_type">
+                                    <option value="PP">PP</option>
+                                    <option value="Jute">Jute</option>
+                                </select>
+                            </div>
+                        </div>
+ 
+                        <div class="row mb-3">
+                            <label for="bag_size" class="col-sm-2 col-form-label">Bag Size (Taille du sac) :</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="fc" id="bag_size" name="bag_size" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="no_bags" class="col-sm-2 col-form-label">Number of Bags (Nombre de sacs) :</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="fc" id="no_bags" name="no_bags" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="activity" class="col-sm-2 col-form-label">Activity (Activité) :</label>
+                            <div class="col-sm-10">
+                                <input class="fc" id="activity" name="activity" required></input>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="loading_timestamp" class="col-sm-2 col-form-label">Loading Date and Time (YYYY-MM-DD HH:MM) (Date et heure de chargement) :</label>
+                            <div class="col-sm-10">
+                                <input type="datetime-local" class="fc" id="loading_timestamp" name="loading_timestamp" value="{{ current_datetime }}" readonly>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="controle" class="col-sm-2 col-form-label">Control (Contrôle) :</label>
+                            <div class="col-sm-10">
+                                <input class="fc" id="controle" name="controle" required></input>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="tc_status" class="col-sm-2 col-form-label">TC Status (Statut TC) :</label>
+                            <div class="col-sm-10">
+                                <input class="fc" id="tc_status" name="tc_status" required></input>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="seal_number" class="col-sm-2 col-form-label">Seal Number (Numéro de sceau) :</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="fc" id="seal_number" name="seal_number" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="check_image" class="col-sm-2 col-form-label">Control Image (Image du contrôle) :</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="fc" id="check_image" name="check_image">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="seal_image" class="col-sm-2 col-form-label">Seal Image (Image du sceau) :</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="fc" id="seal_image" name="seal_image">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-10 offset-sm-2">
+                                <button type="submit" class="btn btn-primary">Add (Ajouter)</button>
+                            </div>
+                        </div>
+                    </form>
+    
+        <!-- End General Form Elements -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+{% endblock %}

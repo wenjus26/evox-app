@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Stuffing Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Stuffing</li>
+          <li class="breadcrumb-item active">Edit Supplier In fos</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">General Stuffing Information</h5>
+
+              <!-- General Form Elements -->
+              {% block content %}
+              <h1>Modifier les Informations du Fournisseur</h1>
+              <form method="POST" enctype="multipart/form-data">
+                <div class="row mb-3">
+                  <label for="supplier_name" class="col-sm-2 col-form-label">Nom du Fournisseur :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="supplier_name" name="supplier_name" value="{{ stuffing.supplier_name }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="wh_code" class="col-sm-2 col-form-label">Code WH :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="wh_code" name="wh_code" value="{{ stuffing.wh_code }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="bag_type" class="col-sm-2 col-form-label">Type de Sac :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="bag_type" name="bag_type" value="{{ stuffing.bag_type }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="bag_size" class="col-sm-2 col-form-label">Taille du Sac :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="bag_size" name="bag_size" value="{{ stuffing.bag_size }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="no_bags" class="col-sm-2 col-form-label">Nombre de Sacs :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="no_bags" name="no_bags" value="{{ stuffing.no_bags }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="activity" class="col-sm-2 col-form-label">Activité :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="activity" name="activity" value="{{ stuffing.activity }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="loading_timestamp" class="col-sm-2 col-form-label">Heure de Chargement :</label>
+                  <div class="col-sm-10">
+                    <input type="datetime-local" class="fc" id="loading_timestamp" name="loading_timestamp" value="{{ stuffing.loading_timestamp.strftime('%Y-%m-%dT%H:%M:%S') }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="controle" class="col-sm-2 col-form-label">Contrôle :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="controle" name="controle" value="{{ stuffing.controle }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="tc_status" class="col-sm-2 col-form-label">Statut TC :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="tc_status" name="tc_status" value="{{ stuffing.tc_status }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="seal_number" class="col-sm-2 col-form-label">Numéro de Sceau :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="seal_number" name="seal_number" value="{{ stuffing.seal_number }}">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="check_image" class="col-sm-2 col-form-label">Image de Contrôle :</label>
+                  <div class="col-sm-10">
+                    <input type="file" class="fc-file" id="check_image" name="check_image">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="seal_image" class="col-sm-2 col-form-label">Image du Sceau :</label>
+                  <div class="col-sm-10">
+                    <input type="file" class="fc-file" id="seal_image" name="seal_image">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Modifier les Informations du Fournisseur</button>
+              </form>
+            {% endblock %}
+   
+            <!-- End General Form Elements -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  {% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Stuffing Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Stuffing</li>
+          <li class="breadcrumb-item active">Edit Stuffing</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">General Stuffing Information</h5>
+
+              <!-- General Form Elements -->
+              <h1>Modifier le Chargement</h1>
+              <form method="POST" enctype="multipart/form-data">
+                <div class="row mb-3">
+                  <label for="stuffing_number" class="col-sm-2 col-form-label">Numéro de Chargement :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="stuffing_number" name="stuffing_number" value="{{ stuffing.stuffing_number }}" required>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="truck_number" class="col-sm-2 col-form-label">Numéro de Camion :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="truck_number" name="truck_number" value="{{ stuffing.truck_number }}" required>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="booking_number" class="col-sm-2 col-form-label">Numéro de Réservation :</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="fc" id="booking_number" name="booking_number" value="{{ stuffing.booking_number }}">
+                  </div>
+                </div>
+                <!-- Ajoutez d'autres champs ici en fonction de votre modèle Stuffing -->
+                <div class="row mb-3">
+                  <label for="arrival_image" class="col-sm-2 col-form-label">Image d'Arrivée :</label>
+                  <div class="col-sm-10">
+                    <input type="file" class="fc-file" id="arrival_image" name="arrival_image">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Modifier le Chargement</button>
+              </form>
+            
+   
+            <!-- End General Form Elements -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {% endblock %}

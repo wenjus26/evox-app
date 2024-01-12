@@ -1,0 +1,106 @@
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Stuffing Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Stuffing</li>
+          <li class="breadcrumb-item active">Create Stuffing</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">General Stuffing Information</h5>
+
+              <!-- General Form Elements -->
+              <form action="/stuffing/add" method="POST" enctype="multipart/form-data">
+                
+                <div class="row mb-3">
+                  <label for="stuffing_number" class="col-sm-2 col-form-label">Stuffing Number:</label>
+                  <div class="col-sm-10">
+                    <input type="text"  name="stuffing_number" class="fc" required>
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <label for="truck_number" class="col-sm-2 col-form-label">Truck Number:</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="truck_number" class="fc" required>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="booking_number" class="col-sm-2 col-form-label">Booking Number:</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="booking_number" class="fc" required>
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <label for="container" class="col-sm-2 col-form-label">container:</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="container" class="fc" required>
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <label for="forwarder" class="col-sm-2 col-form-label">forwader:</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="forwarder" class="fc" required>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <label for="commodity"class="col-sm-2 col-form-label">commodity:</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="commodity"class="fc" required>
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <label for="variety" class="col-sm-2 col-form-label">variety:</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="variety" class="fc" required>
+                  </div>
+                </div>
+
+
+                <div class="row mb-3">
+                  <label for="image" class="col-sm-2 col-form-label">Image:</label>
+                  <div class="col-sm-10">
+                    <input type="file" name="arrival_image" class="fc" accept="image/*" required>
+                  </div>
+                </div>
+
+
+
+                <div class="row mb-3">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Add Stuffing</button> 
+                    <a  href="#" class="btn btn-primary">Reset Stufing</a> 
+                  </div>   
+                </div>
+              </form><!-- End General Form Elements -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->

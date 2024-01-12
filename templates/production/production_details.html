@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Détails de la Production{% endblock %}
+
+{% block content %}
+<h2>Détails de la Production</h2>
+<ul>
+    <li>ID: {{ production.id }}</li>
+    <li>Quantity Soya (MT): {{ production.quantity_soya_mt }}</li>
+    <li>Quantity Bags: {{ production.quantity_bags }}</li>
+    <li>Bags Size: {{ production.bags_size }}</li>
+    <li>Bags Produced Per Day: {{ production.bags_produced_per_day }}</li>
+    <li>Production Date: {{ production.production_date }}</li>
+    <li>Lot Number: {{ production.lot_number }}</li>
+</ul>
+{% endblock %}

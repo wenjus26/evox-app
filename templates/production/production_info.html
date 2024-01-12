@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Liste des Productions{% endblock %}
+
+{% block content %}
+<main id="main" class="main">
+
+<h2>Liste des Productions</h2>
+<ul>
+    {% for production in productions %}
+    <li>ID: {{ production.id }}</li>
+    <li>Quantity Soya (MT): {{ production.quantity_soya_mt }}</li>
+    <li>Quantity Bags: {{ production.quantity_bags }}</li>
+    <li>Bags Size: {{ production.bags_size }}</li>
+    <li>Bags Produced Per Day: {{ production.bags_produced_per_day }}</li>
+    <li>Production Date: {{ production.production_date }}</li>
+    <li>Lot Number: {{ production.lot_number }}</li>
+
+    <li><a href="{{ url_for('production_details', production_id=production.id) }}">{{ production.id }}</a></li>
+    {% endfor %}
+</ul>
+<ul>
+    <li><a href="{{ url_for('list_productions') }}">Liste des Productions</a></li>
+    <li><a href="{{ url_for('add_production') }}">Ajouter une Production</a></li> <!-- Lien vers la page d'ajout -->
+</ul>
+</main>
+
+{% endblock %}

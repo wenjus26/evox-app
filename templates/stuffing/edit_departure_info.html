@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Stuffing Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Stuffing</li>
+          <li class="breadcrumb-item active">Edit Infos departue</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">General Stuffing Information</h5>
+
+              <!-- General Form Elements -->
+              <form method="POST" enctype="multipart/form-data">
+                <div class="row mb-3">
+                    <label for="departure_timestamp" class="col-sm-2 col-form-label">Heure de Départ :</label>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" class="fc" id="departure_timestamp" name="departure_timestamp" value="{{ stuffing.departure_timestamp.strftime('%Y-%m-%dT%H:%M:%S') }}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="weighment_slip_number" class="col-sm-2 col-form-label">Numéro de Bon de Pesée :</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="fc" id="weighment_slip_number" name="weighment_slip_number" value="{{ stuffing.weighment_slip_number }}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for "gross_weight" class="col-sm-2 col-form-label">Poids Brut :</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="fc" id="gross_weight" name="gross_weight" value="{{ stuffing.gross_weight }}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="tare" class="col-sm-2 col-form-label">Tare :</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="fc" id="tare" name="tare" value="{{ stuffing.tare }}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="net_weight" class="col-sm-2 col-form-label">Poids Net :</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="fc" id="net_weight" name="net_weight" value="{{ stuffing.net_weight }}">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="wb_image" class="col-sm-2 col-form-label">Image du Bon de Pesée :</label>
+                    <div class="col-sm-10">
+                        <input type="file" class="fc" id="wb_image" name="wb_image">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Modifier les Informations de Départ</button>
+            </form>
+            
+            <!-- End General Form Elements -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  {% endblock %}

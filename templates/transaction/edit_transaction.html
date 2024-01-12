@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Stuffing Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Stuffing</li>
+          <li class="breadcrumb-item active">Create Stuffing</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">General Stuffing Information</h5>
+
+    <div class="container">
+        <h2 class="text-center">Éditer une Transaction</h2>
+        <form action="/edit/{{ transaction.id }}" method="POST" enctype="multipart/form-data">
+            <div class="mb-3 row">
+                <label for="truck_number" class="col-sm-2 col-form-label">Truck Number:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="truck_number" name="truck_number" value="{{ transaction.truck_number }}" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="weighment_slip_number" class="col-sm-2 col-form-label">Weighment Slip Number:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="weighment_slip_number" name="weighment_slip_number" value="{{ transaction.weighment_slip_number }}" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="gross_weight" class="col-sm-2 col-form-label">Gross Weight:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="fc" id="gross_weight" name="gross_weight" value="{{ transaction.gross_weight }}" step="0.01" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="tare" class="col-sm-2 col-form-label">Tare:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="fc" id="tare" name="tare" value="{{ transaction.tare }}" step="0.01" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="image" class="col-sm-2 col-form-label">Image:</label>
+                <div class="col-sm-10">
+                    <input type="file" class="fc-file" id="image" name="image" accept="image/*">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Enregistrer les Modifications</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+                <!-- End General Form Elements -->
+            </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% endblock %}

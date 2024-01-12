@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+        <!-- Affichez ici les détails de la transaction -->
+        <p>Transaction Number: {{ transaction.transaction_number }}</p>
+        <img src="{{ url_for('static', filename='images/' + transaction.transaction_number + '.jpg') }}" alt="Transaction Image" class="img-fluid">
+        <!-- Ajoutez d'autres détails ici -->
+
+        <!-- Boutons pour ajouter un Quality Slip et Unloading Slip -->
+        <div class="mt-3">
+            <a href="{{ url_for('add_quality_slip', id=transaction.id) }}" class="btn btn-primary">Ajouter Quality Slip</a>
+            <a href="{{ url_for('add_unloading_slip', id=transaction.id) }}" class="btn btn-primary">Ajouter Unloading Slip</a>
+        </div>
+
+        <!-- Bouton pour retourner à la liste des transactions -->
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Retourner à la liste des transactions</a>
+    </div>
+
+{% endblock %}
+

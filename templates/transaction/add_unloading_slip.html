@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Warehouse Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Transaction</li>
+          <li class="breadcrumb-item active">Add unloading slip</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Unloading Slip Information</h5>
+ <form action="/add_unloading_slip/{{ transaction.id }}" method="POST">
+            <div class="mb-3 row">
+                <label for="supplier_name" class="col-sm-2 col-form-label">Supplier name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="supplier_name" name="supplier_name" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="lot_number" class="col-sm-2 col-form-label">Lot n°:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="lot_number" name="lot_number" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="transaction_number" class="col-sm-2 col-form-label">Transaction n°:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="transaction_number" name="transaction_number" value="{{ transaction.transaction_number }}" readonly>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="wh_code" class="col-sm-2 col-form-label">WH CODE:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="wh_code" name="wh_code" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="commodity" class="col-sm-2 col-form-label">Commodity:</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="commodity" name="commodity">
+                        <option value="SOYA">SOYA</option>
+                        <option value="CADJOU">CADJOU</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="bag_type" class="col-sm-2 col-form-label">Bag Type:</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="bag_type" name="bag_type">
+                        <option value="PP">PP</option>
+                        <option value="Jute">Jute</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="variety" class="col-sm-2 col-form-label">Variety:</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="variety" name="variety">
+                        <option value="ORGANICS">ORGANICS</option>
+                        <option value="CONVENTIONELLE">CONVENTIONELLE</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="truck_number" class="col-sm-2 col-form-label">Truck n°:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="truck_number" name="truck_number" value="{{ transaction.truck_number }}" readonly>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="bag_size" class="col-sm-2 col-form-label">Bag Size:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="fc" id="bag_size" name="bag_size" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="sample_number" class="col-sm-2 col-form-label">Sample n°:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="sample_number" name="sample_number">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="accepted_bags" class="col-sm-2 col-form-label">Accepted Bags:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="fc" id="accepted_bags" name="accepted_bags" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="rejected_bags" class="col-sm-2 col-form-label">Rejected Bags:</label>
+                <div class="col-sm-10">
+                    <input type="number" class="fc" id="rejected_bags" name="rejected_bags" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="good_bags" class="col-sm-2 col-form-label">1-Good:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="good_bags" name="good_bags" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="damaged_bags" class="col-sm-2 col-form-label">2-Damaged:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="damaged_bags" name="damaged_bags" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+                <!-- End General Form Elements -->
+            </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+    {% endblock %}
+

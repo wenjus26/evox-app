@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Create Menu Item</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.name.label(class="form-label") }}
+      {{ form.name(class="fc") }}
+    </div>
+    <div class="form-group">
+      {{ form.url.label(class="form-label") }}
+      {{ form.url(class="fc") }}
+    </div>
+    <div class="form-group">
+      {{ form.role_id.label(class="form-label") }}
+      {{ form.role_id(class="form-select") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+  <a href="{{ url_for('list_menu_items') }}" class="btn btn-secondary">Back to Menu Items</a>
+{% endblock %}

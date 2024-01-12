@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Assign Menu Items to {{ user.first_name }} {{ user.last_name }}</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.menu_item.label(class="form-label") }}
+      {{ form.menu_item(class="form-select", multiple="multiple") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Assign</button>
+  </form>
+  <a href="{{ url_for('list_users') }}" class="btn btn-secondary">Back to Users</a>
+{% endblock %}

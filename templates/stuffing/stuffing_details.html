@@ -1,0 +1,181 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<main id="main" class="main">
+
+  <section class="section">  
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Stuffing Management</h5>
+
+        <!-- Default Tabs -->
+        <ul class="nav nav-tabs d-flex" id="myTabjustified" role="tablist">
+          <li class="nav-item flex-fill" role="presentation">
+            <button class="nav-link w-100 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-justified" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+          </li>
+          <li class="nav-item flex-fill" role="presentation">
+            <button class="nav-link w-100" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-justified" type="button" role="tab" aria-controls="profile" aria-selected="false">Stuffing</button>
+          </li>
+          <li class="nav-item flex-fill" role="presentation">
+            <button class="nav-link w-100" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-justified" type="button" role="tab" aria-controls="contact" aria-selected="false">Complete View</button>
+          </li>
+        </ul>
+        <div class="tab-content pt-2" id="myTabjustifiedContent">
+          <div class="tab-pane fade show active" id="home-justified" role="tabpanel" aria-labelledby="home-tab">
+              Evereything is possible for people who believe in his self.
+          </div>
+          <div class="tab-pane fade" id="profile-justified" role="tabpanel" aria-labelledby="profile-tab">
+      Fight for what you believe in silence without disturbing anyone.          </div>
+          <div class="tab-pane fade" id="contact-justified" role="tabpanel" aria-labelledby="contact-tab">
+Nothing good can happen to you if you don't work for that 
+          </div>
+        </div><!-- End Default Tabs -->
+
+      </div>
+    </div>    
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+
+  
+  
+              <!-- Primary Color Bordered Table -->
+              <table class="table table-bordered border-primary">
+                <thead>
+                  <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Parameters</th>
+                    <th scope="col">Value</th>
+                
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Stuffing Number N°</td>
+                    <td>{{ stuffing.stuffing_number }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Booking Number</td>
+                    <td>{{ stuffing.booking_number }}</td>
+                  </tr>
+                  <tr>
+                  <th scope="row">3</th>
+                  <td>Container</td>
+                  <td>{{ stuffing.container }}</td>
+                </tr>
+                <tr>
+                <th scope="row">4</th>
+                <td>Weigment Slip N°</td>
+                <td>{{ stuffing.weighment_slip_number }}</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Net Weight</td>
+                <td>{{ stuffing.net_weight }}</td>
+              </tr>
+
+              <tr>
+              <th scope="row">6</th>
+              <td>Forwarder</td>
+              <td>{{ stuffing.forwarder }}</td>
+            </tr>
+
+                </tbody>
+              </table>
+              <!-- End Primary Color Bordered Table -->
+  
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Stuffing PICTURE</h5>
+              <!-- Slides with indicators -->
+              <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <h3>Interchange Picture</h3>
+                    <img src="{{ url_for('static', filename='images/stuffing/interchange/' ~ stuffing.stuffing_number ~ '_inter.jpg') }}" style="width: 300px; height: 350px; margin: 10px;" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <h3>Weighment Slip Picture</h3>
+                    <img src="{{ url_for('static', filename='images/stuffing/weighment/' ~ stuffing.stuffing_number ~ '_wb.jpg') }}" style="width: 300px; height: 350px; margin: 10px;" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <h3>Seal </h3>
+                    <img src="{{ url_for('static', filename='images/stuffing/seal/' ~ stuffing.stuffing_number ~ '_seal.jpg') }}" style="width: 300px; height: 350px; margin: 10px;" class="d-block w-100" alt="...">
+                  </div>                  
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='images/stuffing/check/' ~ stuffing.stuffing_number ~ '_check.jpg') }}" style="width: 300px; height: 350px; margin: 10px;" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+
+              </div><!-- End Slides with indicators -->
+
+            </div>
+          </div>
+        </div>
+
+    
+
+        <!-- Special title treatmen -->
+        <div class="card text-center">
+          <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+              <li class="nav-item">
+                <a href="{{ url_for('add_stuffing_info', id=stuffing.id) }}">Add Stuffing Info</a>
+              </li>
+              <br><br>
+              <li class="nav-item">
+                <a href="{{ url_for('add_weighment_info', id=stuffing.id) }}">Add Weighment Slip</a>
+              </li>
+
+              <br> <br>
+
+              <li class="nav-item">
+                <a href="{{ url_for('edit_supplier_info', id=stuffing.id) }}">edit supploer info</a>
+              </li>  <br><br>
+              <li class="nav-item">
+                <a href="{{ url_for('edit_departure_info', id=stuffing.id) }}">edit departue info</a>
+              </li>
+            </ul>
+          </div> <br><br>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">You can move at anytime if you want to progress </p>
+            <a href="{{ url_for('stuffing_index') }}" class="btn btn-primary">Go Back</a>
+          </div>
+        </div><!-- End Special title treatmen -->
+
+      </div>
+
+    </div>
+  </section>
+
+</main><!--
+
+
+
+{% endblock %}

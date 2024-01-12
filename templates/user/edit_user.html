@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Éditer un Utilisateur</title>
+</head>
+<body>
+    <h1>Éditer un Utilisateur</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+        <div>
+            {{ form.first_name.label }}
+            {{ form.first_name }}
+        </div>
+        <div>
+            {{ form.last_name.label }}
+            {{ form.last_name }}
+        </div>
+        <div>
+            {{ form.email.label }}
+            {{ form.email }}
+        </div>
+        <div>
+            {{ form.password.label }}
+            {{ form.password }}
+        </div>
+        <div>
+            {{ form.position.label }}
+            {{ form.position }}
+        </div>
+        <div>
+            {{ form.plant.label }}
+            {{ form.plant }}
+        </div>
+        <div>
+            {{ form.user_id.label }}
+            {{ form.user_id }}
+        </div>
+        <div>
+            {{ form.is_admin.label }}
+            {{ form.is_admin }}
+        </div>
+        <div>
+            <button type="submit">Enregistrer les modifications</button>
+        </div>
+    </form>
+</body>
+</html>

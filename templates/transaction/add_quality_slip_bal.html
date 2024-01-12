@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Warehouse Management</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Transaction</li>
+          <li class="breadcrumb-item active">Add Quality Slip</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Quality Slip Information</h5>
+
+        <form action="/add_quality_slip_bal/{{ transaction.id }}" method="POST" enctype="multipart/form-data">
+            <div class="row mb-3">
+                <label for="transaction_number" class="col-sm-2 col-form-label">Transaction n° :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="transaction_number" name="transaction_number" value='{{ transaction.transaction_number }}' readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="truck_number" class="col-sm-2 col-form-label">Truck n° :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="truck_number" name="truck_number" value='{{ transaction.truck_number }}' readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="timestamp" class="col-sm-2 col-form-label">Timestamp :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="timestamp" name="timestamp" value="{{ transaction.timestamp }}" readonly>
+                </div>
+            </div>
+
+            <!-- Ajoutez d'autres champs ici en fonction de votre modèle Transaction -->
+
+            <div class="row mb-3">
+                <label for="weighment_slip_number" class="col-sm-2 col-form-label">Weighment Slip Number :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="weighment_slip_number" name="weighment_slip_number" value="{{ transaction.weighment_slip_number }}" readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="net_weight" class="col-sm-2 col-form-label">Net Weight :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="net_weight" name="net_weight" value="{{ transaction.net_weight }}" readonly>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="supplier_name" class="col-sm-2 col-form-label">Supplier name :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="supplier_name" name="supplier_name" value="{{ transaction.supplier_name }}" readonly>
+                </div>
+            </div>
+
+            <!-- Ajoutez d'autres champs ici en fonction de votre modèle Transaction -->
+
+            <div class="row mb-3">
+                <label for="moisture_humidity" class="col-sm-2 col-form-label">Moisture / Humidity :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="moisture_humidity" name="moisture_humidity" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="damaged_green_seed" class="col-sm-2 col-form-label">Damaged / Green Seed :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="damaged_green_seed" name="damaged_green_seed" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="other_foreign_matter" class="col-sm-2 col-form-label">Other Foreign Matter (OFM) :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="fc" id="other_foreign_matter" name="other_foreign_matter" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="any_other_remarks" class="col-sm-2 col-form-label">Any Other remarks :</label>
+                <div class="col-sm-10">
+                    <textarea class="fc" id="any_other_remarks" name="any_other_remarks"></textarea>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="image_upload" class="col-sm-2 col-form-label">Image Upload :</label>
+                <div class="col-sm-10">
+                    <input type="file" class="fc-file" name="image" accept="image/*" >
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+
+                <!-- End General Form Elements -->
+            </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% endblock %}

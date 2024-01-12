@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Ajouter une Production{% endblock %}
+
+{% block content %}
+<main id="main" class="main">
+
+<h2>Ajouter une Production</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="quantity_soya_mt">Quantity Soya (MT)</label>
+        <input type="text" name="quantity_soya_mt" id="quantity_soya_mt">
+    </div>
+    <div class="form-group">
+        <label for="quantity_bags">Quantity Bags</label>
+        <input type="text" name="quantity_bags" id="quantity_bags">
+    </div>
+    <div class="form-group">
+        <label for="bags_size">Bags Size</label>
+        <input type="text" name="bags_size" id="bags_size">
+    </div>
+    <div class="form-group">
+        <label for="bags_produced_per_day">Bags Produced Per Day</label>
+        <input type="text" name="bags_produced_per_day" id="bags_produced_per_day">
+    </div>
+    <div class="form-group">
+        <label for="production_date">Production Date</label>
+        <input type="date" name="production_date" id="production_date">
+    </div>
+    <div class="form-group">
+        <label for="lot_number">Lot Number</label>
+        <input type="text" name="lot_number" id="lot_number">
+    </div>
+    <button type="submit">Ajouter</button>
+</form>
+</main>
+
+{% endblock %}
