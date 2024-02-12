@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h1>Welcome, {{ username }}!</h1>
+    <p>This is the home page.</p>
+    <p><a href="{{ url_for('change_password') }}">Change Password</a></p>
+
+    {% if username %}
+        <h2>Your Roles:</h2>
+        <ul>
+            {% for role in roles %}
+                <li>{{ role }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

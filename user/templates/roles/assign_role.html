@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Assign Role to User{% endblock %}
+{% block content %}
+<form action="{{ url_for('assign_role', user_id=user.id) }}" method="post">
+    <h2>{{ user.username }}</h2>
+    <label for="roles">Roles:</label><br>
+    {% for role in roles %}
+        <input type="checkbox" id="role{{ role.id }}" name="roles" value="{{ role.id }}"
+               {% if role in user.roles %} checked {% endif %}>
+        <label for="role{{ role.id }}">{{ role.name }}</label><br>
+    {% endfor %}
+    <button type="submit">Save Roles</button>
+</form>
+{% endblock %}

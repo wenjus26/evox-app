@@ -1,0 +1,15 @@
+def role_required(role_name):
+    def decorator(func):
+        @wraps(func)
+        def decorated_function(*args, **kwargs):
+            if 'user_id' in session:
+                user_id = session['user_id']
+                user = User.query.get(user_id)
+                if user:
+                    user_roles = [role.name for role in user.roles]
+                    if role_name in user_roles:
+                        return func(*args, **kwargs)
+            flash("Vous n'avez pas l'autorisation requise pour accéder à cette page.", 'error')
+            return redirect(url_for('home'))
+        return decorated_function
+    return decorator

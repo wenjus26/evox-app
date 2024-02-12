@@ -1,0 +1,66 @@
+/* Style pour supprimer les puces des listes */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style pour les messages d'erreur */
+.error {
+    color: red;
+}
+
+/* Style pour les messages de succès */
+.success-messages {
+    color: green;
+}
+
+/* Style pour les messages d'erreur */
+.flash-messages .error {
+    color: red;
+}
+
+/* Style pour les messages de succès */
+.flash-messages .success {
+    color: green;
+}
+
+
+
+
+
+
+/* Style CSS pour la barre de menu */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #666;
+    color: white;
+}
+
+/* Style pour les messages d'erreur */
+.error-messages {
+    color: red;
+}
+
+/* Style pour les messages de succès */
+.success-messages {
+    color: green;
+}

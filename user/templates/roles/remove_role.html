@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Remove Role from User{% endblock %}
+{% block content %}
+<form action="{{ url_for('remove_role', user_id=user.id) }}" method="post">
+    <h2>{{ user.username }}</h2>
+    <label for="roles">Roles:</label><br>
+    {% for role in user.roles %}
+        <input type="checkbox" id="role{{ role.id }}" name="roles" value="{{ role.id }}" checked>
+        <label for="role{{ role.id }}">{{ role.name }}</label><br>
+    {% endfor %}
+    <button type="submit">Remove Roles</button>
+</form>
+{% endblock %}
